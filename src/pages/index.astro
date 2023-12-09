@@ -1,0 +1,92 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import Feature from '../components/Feature.astro'
+import Counter from '../components/Counter.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+import Slider from '../components/Slider.astro'
+import Header from '../components/Header.astro'
+import Card from '../components/Card.astro'
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<DefaultLayout title="Inicio">
+  <Header />
+  <Hero />
+  <div id="nosotros"></div>  
+  <ContentMedia imgSrc="/mor-nosotros.jpg">
+    <h2>¿Quiénes Somos?</h2>
+    <p class="text-xl">
+      Mör Centro Dental está formado por un equipo de primer nivel, cuya gestión se basa en valores profesionales y éticos. 
+      Tenemos como objetivo ofrecer un servicio de calidad a las necesidades de cada paciente.
+      El trabajo en equipo y los conocimientos de los especialistas son claves para ofrecer un servicio diferenciado que dé respuesta, incluso, a los casos más complejos.
+      El Dr. Juan Moreno es el encargado del equipo de especialistas, con una trayectoria profesional enfocada principalmente en ortodoncia.
+    </p>
+  </ContentMedia>
+  <section class="my-20">
+    <div class="container" id="servicios">
+      <h2 class="mb-16 text-6xl">Servicios</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature icon="akar-icons:dental" title="Ortodoncia">
+          Mejoramos su sonrisa usando los brackets metálicos, estéticos o los de microcristales de zafiro, que ofrecen mayor estética.
+        </Feature>
+        <Feature icon="akar-icons:dental" title="Odontopediatría">
+          Contamos con los mejores especialistas enfocados en el diagnóstico y tratamiento de la población infantil.
+        </Feature>
+        <Feature icon="akar-icons:dental" title="Endodoncia">
+          La formación y experiencia de nuestro equipo permite salvar piezas dentales naturales muy deterioradas y con afectación nerviosa.
+        </Feature>
+        <Feature icon="akar-icons:dental" title="Cirugía Oral e Implantología">
+          Extracciones de dientes, alargamiento coronario y todo lo relacionado con la regeneración ósea guiada.
+        </Feature>
+        <Feature icon="akar-icons:dental" title="Ortopedia Dentofacial">
+          Corregimos tanto la posición de los dientes como las anomalías en la estructura ósea facial.
+        </Feature>
+        <Feature icon="akar-icons:dental" title="Odontología Restauradora">
+          Mantenimiento de su salud oral, reconstrucciones dentales y prevención de patologías.
+        </Feature>
+      </div>
+    </div>
+  </section>
+  <section class="my-20" id="promociones">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Promociones</h2>
+      <div class="promociones">
+        <Card imgSrc="/blanqueamiento.png"/>
+        <Card imgSrc="/brackets.png"/>
+        <Card imgSrc="/coronas.png"/>
+        <Card imgSrc="/diseno-sorisa.png"/>
+        <Card imgSrc="/implante.png"/>
+      </div>
+    </div>
+  </section>
+  <div id="testimonios"></div>
+  <Slider />
+  <!--<section class="mt-64 mb-32">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Counters</h2>
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+        <Counter count="130" title="Stars" sub="On GitHub" />
+        <Counter count="17" title="Accessible" sub="Components" />
+        <Counter count="500" title="Commits" sub="Merged" />
+        <Counter count="18+" title="Months" sub="Since launch" />
+      </div>
+    </div>
+  </section>-->
+</DefaultLayout>
+
+<style>
+  .promociones {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 450px));
+    grid-template-rows: minmax(300px, 400px);
+    gap: 70px;
+    justify-content: center;
+  }
+  @media (max-width: 768px) {
+    .promociones {
+      grid-template-columns: repeat(1, 1fr);
+      margin: 0 20px;
+    }
+  }
+</style>

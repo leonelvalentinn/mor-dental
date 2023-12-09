@@ -1,0 +1,18 @@
+---
+import CallToAction from './CallToAction.astro'
+
+const currentYear = new Date().getFullYear()
+---
+
+<footer>
+  <CallToAction />
+  <section class="py-8">
+    <div class="container">
+      <p>
+        &copy; {currentYear} - Todos los derechos reservados Mör Clínica Dental. Desarrollado por agencia de marketing <a
+          href="https://dentarios.com.mx">Dentarios</a
+        >.
+      </p>
+    </div>
+  </section>
+</footer>

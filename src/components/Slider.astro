@@ -1,0 +1,217 @@
+---
+import cliente1 from "../assets/img/clientes/cliente1.png"
+import cliente2 from "../assets/img/clientes/cliente2.png"
+import cliente3 from "../assets/img/clientes/cliente3.png"
+import cliente4 from "../assets/img/clientes/cliente4.png"
+import cliente5 from "../assets/img/clientes/cliente5.png"
+import cliente6 from "../assets/img/clientes/cliente6.png"
+import cliente7 from "../assets/img/clientes/cliente7.png"
+import { Image } from "astro:assets"
+---
+
+<section class="my-20">
+  <div class="container">
+    <h2 class="mb-16 text-6xl">Testimonios</h2>
+    <div>
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="item-testimonios">
+              <div>
+                <Image src={cliente1} alt="Mor Logo" width="50" height="50" />
+                <h3>Rogelio Zapata</h3>
+              </div>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p>Excelente servicio de el dentista Juan Moreno trabaja muy bien excelente trato y muy profesional lo recomiendo ampliamente</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="item-testimonios">
+              <div>
+                <Image src={cliente2} alt="Mor Logo" width="50" height="50" />
+                <h3>K M</h3>
+              </div>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p>Excelente servicio, muy profesional todo el personal!
+                100% Recomendado.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="item-testimonios">
+              <div>
+                <Image src={cliente3} alt="Mor Logo" width="50" height="50" />
+                <h3>Alely Rodriguez Avitia</h3>
+              </div>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p>Recomiendo ampliamente al doctor Juan Moreno paredes por su buen trato a mi persona y lo recomiendo por ser tan amable en su profesión</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="item-testimonios">
+              <div>
+                <Image src={cliente4} alt="Mor Logo" width="50" height="50" />
+                <h3>Damariz Mariscal</h3>
+              </div>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p>Excelente servicio me a gustado mucho el cambio y la mejoría</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="item-testimonios">
+              <div>
+                <Image src={cliente5} alt="Mor Logo" width="50" height="50" />
+                <h3>Magaly Parra</h3>
+              </div>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p>Muy buen trato y atención, muy puntuales y excelentes resultados  ... ¡100 % recomendado!</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="item-testimonios">
+              <div>
+                <Image src={cliente6} alt="Mor Logo" width="50" height="50" />
+                <h3>Anahi Olivas</h3>
+              </div>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p>Muy amable y profesional, trabaja rápido y bien, recomendado 💯…</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="item-testimonios">
+              <div>
+                <Image src={cliente7} alt="Mor Logo" width="50" height="50" />
+                <h3>St. Patrick Renato</h3>
+              </div>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p>Encantado con el servicio, siempre te reciben en el edificio de una increible forma y el trato que te dan como paciente es esplendido! Definitivamente un gran motivo para ir al dentista! :D</p>
+            </div>
+          </div>
+        </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  :root 
+  {
+  --swiper-navigation-size: 15px;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: 10px;
+  --swiper-navigation-color: rgba(255, 255, 255, 0.768);
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .item-testimonios {
+    padding: 0 20px;
+  }
+  .item-testimonios .rating i {
+    color: rgb(226, 226, 4);
+  }
+  .item-testimonios .rating {
+    margin: 10px 0;
+  }
+  .item-testimonios > div {
+    display: flex;
+    align-items: center;
+  }
+  .item-testimonios h3 {
+    margin-left: 10px;
+  }
+  .swiper-button-next, .swiper-button-prev {
+    transition: all 0.275s linear;
+  }
+  .swiper-button-prev:hover, .swiper-button-next:hover {
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    border-radius: 100%;
+    transition: all 0.275s linear;
+    --swiper-navigation-size: 20px;
+  }
+</style>
+<script>
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+  const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  slidesPerView: '1',
+  direction: 'horizontal',
+  loop: true,
+  autoplay: {
+    delay: 2000,
+  },
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 20
+    }
+  }
+});
+</script>

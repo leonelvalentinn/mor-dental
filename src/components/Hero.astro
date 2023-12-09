@@ -1,0 +1,56 @@
+---
+import { Icon } from 'astro-icon'
+
+const { src = '/hero.png' } = Astro.props
+import hero from '../assets/img/hero.jpg';
+---
+
+<section class="hero my-10">
+  <div class="container">
+    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+      <div class="flex flex-col items-center gap-8 md:items-start">
+        <h1 class="text-center text-6xl md:text-left lg:text-8xl">
+          <slot><span style="font-family: Times New Roman;">m</span><span class="text-blue">ö</span><span style="font-family: Times New Roman;">r</span><br> Centro dental</slot>
+        </h1>
+        <div class="flex flex-col gap-3 min-[500px]:flex-row">
+          <a class="button has-icon color-secondary" href="https://api.whatsapp.com/send?phone=526255890381">
+            <Icon pack="ic" name="baseline-whatsapp" />
+            WhatsApp
+          </a>
+          <a
+            class="button has-icon"
+            href="tel:6255890381"
+          >
+            <Icon pack="bi" name="phone" />
+            Llamada
+          </a>
+        </div>
+      </div>
+      <img class="hidden lg:block" src={src} alt="" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .container img {
+    border-radius: 20px;
+  }
+  .text-gradient {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-blue {
+    background: #22a9cb;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  :global(.darkmode .text-gradient) {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

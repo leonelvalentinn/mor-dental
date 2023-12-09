@@ -1,0 +1,58 @@
+---
+import Navigation from '../components/Navigation.astro'
+import { SkipLinks } from 'accessible-astro-components'
+import { Icon } from 'astro-icon'
+---
+
+<header>
+  <!--<SkipLinks />-->
+  <Navigation>
+    <li class="menu-item">
+      <a href="/" title="Inicio" rel="external noopener noreferrer">Inicio</a>
+    </li>
+    <li class="menu-item">
+      <a href="/#nosotros" title="Nosotros" rel="external noopener noreferrer">Nosotros</a>
+    </li>
+    <li class="menu-item">
+      <a href="/services" title="Servicios">Servicios</a>
+    </li>
+    <li class="menu-item">
+      <a href="/#promociones" title="Promociones" rel="external noopener noreferrer">Promociones</a>
+    </li>
+    <li class="menu-item">
+      <a href="/#testimonios" title="Testimonios" rel="external noopener noreferrer">Testimonios</a>
+    </li>
+    <li class="menu-item">
+      <a href="/#ubicacion" title="Ubicación" rel="external noopener noreferrer">Ubicación</a>
+    </li>
+    <li class="menu-item">
+      <a href="https://api.whatsapp.com/send?phone=526255890381" title="WhatsApp" rel="external noopener noreferrer">Contacto</a>
+    </li>
+  </Navigation>
+</header>
+
+<style lang="scss" is:global>
+  @use '../assets/scss/base/outline' as *;
+
+  header {
+    .type-icon a {
+      display: block;
+
+      [astro-icon] {
+        margin-top: -4px;
+        width: 30px;
+
+        path {
+          fill: var(--action-color);
+          transition: fill 0.2s ease-in-out;
+        }
+      }
+
+      &:hover {
+        [astro-icon] path {
+          fill: var(--action-color-state);
+        }
+      }
+    }
+  }
+</style>

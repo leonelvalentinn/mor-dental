@@ -1,0 +1,46 @@
+---
+import { Media } from 'accessible-astro-components'
+
+const { imgSrc, reverseImg = false } = Astro.props
+---
+
+<section class="my-40">
+  <div class="container">
+    <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
+      {!reverseImg ? <div class="fondo relative">
+        <Media class="rounded-lg" src={imgSrc} />
+        </div> : ''}
+      <div class="space-content flex flex-col justify-center">
+        <slot />
+      </div>
+      {reverseImg ? <div class="fondo relative">
+        <Media class="rounded-lg" src={imgSrc} />
+        </div> : ''}
+    </div>
+  </div>
+</section>
+
+<style>
+  .fondo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    top: -5px;
+    left: -5px;
+    width: 103%;
+    height: 104%;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, var(--primary-300), var(--primary-500) );
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  @media (min-width: 768px) {
+    .fondo::before {
+      top: -20px;
+      left: -25px;
+      width: 110%;
+      height: 110%;
+    }
+  }
+</style>
