@@ -1,0 +1,43 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Header from '../components/Header.astro'
+import nino from "../assets/img/iconos/nino.png"
+import endodoncia from "../assets/img/iconos/endodoncia.png"
+import tirantes from "../assets/img/iconos/tirantes.png"
+import cirugia from "../assets/img/iconos/cirugia.png"
+import chequeo from "../assets/img/iconos/chequeo-dental.png"
+import mandibula from "../assets/img/iconos/mandibula.png"
+import Servicio from '../components/Servicio.astro'
+import Casos from '../components/Casos.astro'
+---
+
+<DefaultLayout title="Ortodoncia">
+  <Header />
+  <Servicio 
+    title='Ortodoncia' 
+    subtitle='Puntos Importantes'
+    punto1='Tipos de aparatos' 
+    punto2='Cuidado de tus brackets' 
+    infoDesplegable1='Brackets'
+    infoDesplegable2='Invisialign'
+    infoDesplegable3='uidado de tus brackets'
+    infoDesplegable4='uidado de tus brackets'
+    infoDesplegable5='uidado de tus brackets'
+    infoDesplegable6='uidado de tus brackets'
+    img="/Servicios/Ortodoncia/ortodoncia.jpg"
+    img2='/Servicios/Ortodoncia/ortodoncia-3.jpg'
+    img3="/Servicios/Ortodoncia/Ortodoncia-2.jpg"
+  >
+  <!--<li slot="punto1">Hola</li>
+  <li slot="punto2">HOlasssss</li>-->
+  </Servicio>
+  <Casos 
+    img1=''
+    img2=''
+    img3=''
+    img4=''
+    img5=''
+    title='Ortodoncia'
+    imgSrc='/Servicios/Ortodoncia/Casos/caso-1.jpg'
+  />
+</DefaultLayout>

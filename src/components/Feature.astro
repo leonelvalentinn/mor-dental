@@ -1,21 +1,21 @@
 ---
 import { Icon } from 'astro-icon'
+import { Image } from 'astro:assets';
 
-const { icon = 'mdi:rocket', title = 'Title' } = Astro.props
+const { icon = 'mdi:rocket', title = 'Title', servicio = 'servicio' } = Astro.props
 ---
 
 <div class="feature flex flex-col gap-4">
-  <Icon name={icon} class="icono"/>
+  <Image src={icon} alt="Icono" width="50" height="50"/>
   <div class="content">
     <h3>{title}</h3>
     <p>
       <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
     </p>
-    <a class="button has-icon color-secondary phone"
-      href="tel:5514476309"
+    <a class="color-secondary phone"
+      href={servicio}
     >
-      <Icon pack="bi" name="phone" />
-      Llamada
+      Ver más
     </a>
   </div>
 </div>

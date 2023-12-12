@@ -8,6 +8,11 @@ const currentYear = new Date().getFullYear()
   <CallToAction />
   <section class="py-8">
     <div class="container">
+      <p>Síguenos en todas nuestras redes sociales</p>
+      <div class="container flex justify-start items-center rs">
+        <a href="http://" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook footer-face"></i></a>
+        <a href="http://" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram footer-ins"></i></a>
+      </div>
       <p>
         &copy; {currentYear} - Todos los derechos reservados Mör Clínica Dental. Desarrollado por agencia de marketing <a
           href="https://dentarios.com.mx">Dentarios</a
@@ -16,3 +21,24 @@ const currentYear = new Date().getFullYear()
     </div>
   </section>
 </footer>
+
+<style>
+  .rs a {
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .rs a:hover > .footer-face, 
+  .rs a:hover > .footer-ins {
+    transition: all 0.275s ease-in;
+    color: var(--primary-500);
+  }
+  .footer-face, .footer-ins {
+    font-size: 25px;
+    color: var(--secondary-500);
+    transition: all 0.275s ease-in;
+  }
+  .footer-face {
+    margin-right: 10px;
+  }
+</style>

@@ -8,6 +8,12 @@ import Slider from '../components/Slider.astro'
 import Header from '../components/Header.astro'
 import Card from '../components/Card.astro'
 import { ViewTransitions } from 'astro:transitions';
+import nino from "../assets/img/iconos/nino.png"
+import endodoncia from "../assets/img/iconos/endodoncia.png"
+import tirantes from "../assets/img/iconos/tirantes.png"
+import cirugia from "../assets/img/iconos/cirugia.png"
+import chequeo from "../assets/img/iconos/chequeo-dental.png"
+import mandibula from "../assets/img/iconos/mandibula.png"
 ---
 
 <DefaultLayout title="Inicio">
@@ -27,22 +33,22 @@ import { ViewTransitions } from 'astro:transitions';
     <div class="container" id="servicios">
       <h2 class="mb-16 text-6xl">Servicios</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="akar-icons:dental" title="Ortodoncia">
+        <Feature icon={tirantes} title="Ortodoncia" servicio="/ortodoncia" id="Ortodoncia">
           Mejoramos su sonrisa usando los brackets metálicos, estéticos o los de microcristales de zafiro, que ofrecen mayor estética.
         </Feature>
-        <Feature icon="akar-icons:dental" title="Odontopediatría">
+        <Feature icon={nino} title="Odontopediatría" servicio="/services#Odontopediatria" id="Odontopediatria">
           Contamos con los mejores especialistas enfocados en el diagnóstico y tratamiento de la población infantil.
         </Feature>
-        <Feature icon="akar-icons:dental" title="Endodoncia">
+        <Feature icon={endodoncia} title="Endodoncia" servicio="/services#Endodoncia" id="Endodoncia">
           La formación y experiencia de nuestro equipo permite salvar piezas dentales naturales muy deterioradas y con afectación nerviosa.
         </Feature>
-        <Feature icon="akar-icons:dental" title="Cirugía Oral e Implantología">
+        <Feature icon={cirugia} title="Cirugía Maxilofacial" servicio="/services#Cirugia" id="Cirugia">
           Extracciones de dientes, alargamiento coronario y todo lo relacionado con la regeneración ósea guiada.
         </Feature>
-        <Feature icon="akar-icons:dental" title="Ortopedia Dentofacial">
+        <Feature icon={mandibula} title="Ortopedia Dentofacial" servicio="/services#Ortopedia" id="Ortopedia">
           Corregimos tanto la posición de los dientes como las anomalías en la estructura ósea facial.
         </Feature>
-        <Feature icon="akar-icons:dental" title="Odontología Restauradora">
+        <Feature icon={chequeo} title="Odontología General" servicio="/services#Restauradora" id="Restauradora">
           Mantenimiento de su salud oral, reconstrucciones dentales y prevención de patologías.
         </Feature>
       </div>
@@ -56,6 +62,7 @@ import { ViewTransitions } from 'astro:transitions';
         <Card imgSrc="/brackets.png"/>
         <Card imgSrc="/coronas.png"/>
         <Card imgSrc="/diseno-sorisa.png"/>
+        <Card imgSrc="/implante.png"/>
         <Card imgSrc="/implante.png"/>
       </div>
     </div>

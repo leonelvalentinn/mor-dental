@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+  img1: string;
+  img2: string;
+  img3: string;
+  img4: string;
+  img5: string;
+  title: string
+  imgSrc: string
+}
+const { img1, img2, img3, img4, img5, title, imgSrc } = Astro.props;
+import Card2 from '../components/Card2.astro'
+---
+
+<section class="container">
+  <h2 class="text-left text-6xl my-20">Nuestros Pacientes</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 place-items-center mt-5 mb-12">
+    <Card2 title={title} imgSrc={imgSrc}/>
+    <Card2 title={title} imgSrc={imgSrc}/>
+    <Card2 title={title} imgSrc={imgSrc}/>
+  </div>
+</section>
+
+<!-- Estilos -->
+<style>
+
+</style>

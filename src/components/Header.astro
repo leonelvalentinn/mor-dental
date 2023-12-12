@@ -3,7 +3,9 @@ import Navigation from '../components/Navigation.astro'
 import { SkipLinks } from 'accessible-astro-components'
 import { Icon } from 'astro-icon'
 ---
-
+<div class="tel-header">
+  Agenda tu cita al telefóno <a href="tel:5512345678" target="_blank">5512345678</a>
+</div>
 <header>
   <!--<SkipLinks />-->
   <Navigation>
@@ -54,5 +56,14 @@ import { Icon } from 'astro-icon'
         }
       }
     }
+  }
+  .tel-header {
+    background-color: var(--primary-300);
+    color: white;
+    text-align: center;
+    width: 100vw !important;
+  }
+  .tel-header a {
+    color: white !important;
   }
 </style>

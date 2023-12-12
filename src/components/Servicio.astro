@@ -1,0 +1,220 @@
+---
+import { Media } from 'accessible-astro-components'
+import ContentMedia from '../components/ContentMedia.astro'
+interface Props {
+	title: string;
+	punto1: string;
+  punto2: string;
+  subtitle: string;
+
+	img: string;
+  img2: string
+  img3: string
+
+  infoDesplegable1: string;
+  infoDesplegable2: string;
+  infoDesplegable3: string;
+  infoDesplegable4: string;
+  infoDesplegable5: string;
+  infoDesplegable6: string;
+}
+const { title, punto1, punto2, subtitle, img, infoDesplegable1, infoDesplegable2, infoDesplegable3, infoDesplegable4, infoDesplegable5, infoDesplegable6, img2, img3 } = Astro.props;
+
+---
+
+<section class="container" id="inicio">
+  <h2 class="mb-5 text-6xl mt-8">{title}</h2>
+    <ContentMedia imgSrc={img}>
+      <h2>¿Qué es la ortodoncia?</h2>
+      <p class="text-xl">
+        La ortodoncia es una especialidad odontológica que estudia, previene y corrige las alteraciones del desarrollo, las formas de las arcadas dentarias y la posición de los maxilares, con el fin de restablecer el equilibrio morfológico y funcional de la boca y de la cara, mejorando también la estética facial.
+        Para este tipo de tratamiento se utilizan principalmente tres tipos de aparatos.
+      </p>
+    </ContentMedia>
+	<!-- Cambios -->
+	<h2>{subtitle}</h2>
+	<div class="container-info mb-12">
+		<ul class="menu-info">
+			<li class="btn-menu select" id="uno"><a>{punto1}</a></li>
+			<li class="btn-menu" id="dos"><a>{punto2}</a></li>
+		</ul>
+		<div class="container-desplegable view container" id="parte-1">
+			<ul class="md:pr-14">
+				<li>{infoDesplegable1}</li>
+				<li>{infoDesplegable2}</li>
+				<li>{infoDesplegable3}</li>
+        <slot name="punto1"/>
+			</ul>
+			<div class="w-full">
+        <Media class="rounded-lg" src={img2} />
+      </div>
+		</div>
+    <div class="container-desplegable container" id="parte-2">
+      <div class="w-full">
+        <Media class="rounded-lg" src={img3} />
+      </div>
+			<ul class="md:pl-10">
+				<li>{infoDesplegable4}</li>
+				<li>{infoDesplegable5}</li>
+				<li>{infoDesplegable6}</li>
+        <slot name="punto2"/>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- Estilos -->
+<style>
+  @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+  .why {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+	.menu-info {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin: 10px;
+		text-align: center;
+    padding: 0;
+	}
+	.btn-menu {
+		margin: 10px 0;
+		list-style: none;
+    border-bottom: 3px #b8f2ff solid;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+	}
+  .menu-info li:hover {
+    border-bottom: 3px #29a1fd solid;
+    transition: all 0.3s ease-in-out;
+  }
+	.menu-info a {
+		text-decoration: none;
+		color: black;
+	}
+  .container-list {
+    list-style: none;
+  }
+  .container-list li {
+    margin-bottom: 5px;
+  }
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 25%;
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+  .why button {
+    padding: 12px 16px;
+    background-color: var(--rosa);
+    border-radius: 15px;
+    color: white;
+    border-style: none;
+    transition: all 0.3s ease-in-out;
+  }
+  .why button:hover {
+    background-color: var(--morado);
+    transition: all 0.3s ease-in-out;
+  }
+  .conoce-des, .conoce-mov {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .conoce-des {
+    display: none;
+  }
+  .container-desplegable {
+    display: none;
+    transition: all 0.3s ease-in-out;
+  }
+  .container-desplegable li {
+    margin-top: 10px;
+  }
+  .container-desplegable ul {
+    list-style:none;
+  }
+  .container-desplegable li::before {
+    content: "ö";
+    margin-right: 8px;
+    color: var(--primary-300);
+    font-size: 25px;
+  }
+  .view {
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+  .select {
+    border-bottom: 3px #29a1fd solid;
+    transition: all 0.3s ease-in-out;
+  }
+  @media (min-width: 768px) {
+    .menu-info {
+      flex-direction: row;
+    }
+    .btn-menu:nth-child(1) {
+      margin-right: 35px;
+    }
+    .container-desplegable {
+      justify-content: center;
+      align-items: center;
+    }
+    .view {
+      display: flex;
+    }
+    .btn-menu {
+      padding-bottom: 10px;
+    }
+    .conoce-des {
+      display: flex;
+    }
+    .conoce-mov {
+      display: none;
+    }
+    .container-materno {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container-why {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: row-reverse;
+    }
+    .container-why p {
+      margin-top: 15px;
+    }
+  }
+</style>
+
+<!-- Scripts -->
+<script>
+  const uno = document.getElementById("uno");
+  const dos = document.getElementById("dos");
+  const parte1 = document.getElementById("parte-1");
+  const parte2 = document.getElementById("parte-2");
+
+  dos.addEventListener('click', function (){
+    parte1.classList.remove("view");
+    parte2.classList.add("view");
+    uno.classList.remove("select");
+    dos.classList.add("select");
+  });
+  uno.addEventListener('click', function () {
+    parte1.classList.add("view");
+    parte2.classList.remove("view");
+    uno.classList.add("select");
+    dos.classList.remove("select");
+  });
+</script>
