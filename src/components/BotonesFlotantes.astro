@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon'
+---
+<div class="btn-flotantes">
+  <a class="has-icon color-secondary" href="https://api.whatsapp.com/send?phone=526255890381" style="" target="_blank">
+    <Icon pack="ic" name="baseline-whatsapp" />
+    
+  </a>
+  <a
+    class="has-icon"
+    href="tel:6255890381"
+    style=""
+    target="_blank"
+  >
+    <Icon pack="bi" name="phone" />
+    
+  </a>
+</div>
+
+<style>
+  .btn-flotantes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 99;
+  }
+  .btn-flotantes a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    color: white;
+    padding: 20px;
+    transition: all 0.275s ease-in;
+  }
+  .btn-flotantes a:nth-last-child(1) {
+    margin-top: 10px;
+    background-color: var(--primary-300);
+  }
+  .btn-flotantes a:nth-last-child(2) {
+    background-color: var(--secondary-300);
+  }
+  .btn-flotantes a:nth-last-child(2):hover {
+    background-color: var(--secondary-500);
+    transition: all 0.275s ease-in;
+  }
+  .btn-flotantes a:nth-last-child(1):hover {
+    transition: all 0.275s ease-in;
+    background-color: var(--primary-500); 
+  }
+</style>

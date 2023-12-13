@@ -11,9 +11,14 @@ import { ViewTransitions } from 'astro:transitions';
 import nino from "../assets/img/iconos/nino.png"
 import endodoncia from "../assets/img/iconos/endodoncia.png"
 import tirantes from "../assets/img/iconos/tirantes.png"
+import diente from "../assets/img/iconos/diente.png"
 import cirugia from "../assets/img/iconos/cirugia.png"
 import chequeo from "../assets/img/iconos/chequeo-dental.png"
 import mandibula from "../assets/img/iconos/mandibula.png"
+import prostodoncia from "../assets/img/iconos/corona-dental.png"
+import implante from "../assets/img/iconos/implante-dental.png"
+import cuidado from "../assets/img/iconos/cuidado-dental.png"
+import BotonesFlotantes from '../components/BotonesFlotantes.astro'
 ---
 
 <DefaultLayout title="Inicio">
@@ -33,23 +38,32 @@ import mandibula from "../assets/img/iconos/mandibula.png"
     <div class="container" id="servicios">
       <h2 class="mb-16 text-6xl">Servicios</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon={tirantes} title="Ortodoncia" servicio="/ortodoncia" id="Ortodoncia">
-          Mejoramos su sonrisa usando los brackets metálicos, estéticos o los de microcristales de zafiro, que ofrecen mayor estética.
+        <Feature icon={diente} title="Odontología General" servicio="/odontologiaGeneral" id="">
+          Es la especialidad que se centra en el diagnóstico, tratamiento y prevención de los problemas primarios de la boca.
         </Feature>
-        <Feature icon={nino} title="Odontopediatría" servicio="/services#Odontopediatria" id="Odontopediatria">
-          Contamos con los mejores especialistas enfocados en el diagnóstico y tratamiento de la población infantil.
+        <Feature icon={cirugia} title="Cirugía Maxilofacial" servicio="/maxilofacial" id="Cirugia">
+          Extracciones de dientes, alargamiento coronario y todo lo relacionado con la regeneración ósea guiada.
+        </Feature>
+        <Feature icon={mandibula} title="Ortopedia Dentofacial" servicio="/ortopedia" id="Ortopedia">
+          Corregimos tanto la posición de los dientes como las anomalías en la estructura ósea facial.
         </Feature>
         <Feature icon={endodoncia} title="Endodoncia" servicio="/services#Endodoncia" id="Endodoncia">
           La formación y experiencia de nuestro equipo permite salvar piezas dentales naturales muy deterioradas y con afectación nerviosa.
         </Feature>
-        <Feature icon={cirugia} title="Cirugía Maxilofacial" servicio="/services#Cirugia" id="Cirugia">
-          Extracciones de dientes, alargamiento coronario y todo lo relacionado con la regeneración ósea guiada.
+        <Feature icon={tirantes} title="Ortodoncia" servicio="/ortodoncia" id="Ortodoncia">
+          Mejoramos su sonrisa usando los brackets metálicos, estéticos o los de microcristales de zafiro, que ofrecen mayor estética.
         </Feature>
-        <Feature icon={mandibula} title="Ortopedia Dentofacial" servicio="/services#Ortopedia" id="Ortopedia">
-          Corregimos tanto la posición de los dientes como las anomalías en la estructura ósea facial.
+        <Feature icon={nino} title="Odontopediatría" servicio="/odontopediatria" id="Odontopediatria">
+          Contamos con los mejores especialistas enfocados en el diagnóstico y tratamiento de la población infantil.
         </Feature>
-        <Feature icon={chequeo} title="Odontología General" servicio="/services#Restauradora" id="Restauradora">
-          Mantenimiento de su salud oral, reconstrucciones dentales y prevención de patologías.
+        <Feature icon={implante} title="Implantología" servicio="/services#Restauradora" id="Restauradora">
+          Disciplina dedicada al reemplazo de dientes perdidos mediante la colocación quirúrgica de un implante.
+        </Feature>
+        <Feature icon={cuidado} title="Periodoncia" servicio="/periodoncia" id="Restauradora">
+          Especialidad de la odontología que trata las enfermedades de las encías y del hueso que sostiene los dientes.
+        </Feature>
+        <Feature icon={prostodoncia} title="Prostodoncia" servicio="/prostodoncia" id="Restauradora">
+          Especialidad de la odontología que se ocupa de diseñar y fabricar las prótesis dentales.
         </Feature>
       </div>
     </div>
@@ -80,6 +94,7 @@ import mandibula from "../assets/img/iconos/mandibula.png"
       </div>
     </div>
   </section>-->
+  <BotonesFlotantes />
 </DefaultLayout>
 
 <style>

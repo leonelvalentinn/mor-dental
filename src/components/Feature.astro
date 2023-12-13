@@ -3,9 +3,10 @@ import { Icon } from 'astro-icon'
 import { Image } from 'astro:assets';
 
 const { icon = 'mdi:rocket', title = 'Title', servicio = 'servicio' } = Astro.props
+
 ---
 
-<div class="feature flex flex-col gap-4">
+<div class="feature flex flex-col gap-4" id={title}>
   <Image src={icon} alt="Icono" width="50" height="50"/>
   <div class="content">
     <h3>{title}</h3>

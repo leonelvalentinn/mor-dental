@@ -7,6 +7,9 @@ interface Props {
   punto2: string;
   subtitle: string;
 
+  contentmedia: string
+  contentmedia1: string
+
 	img: string;
   img2: string
   img3: string
@@ -18,17 +21,16 @@ interface Props {
   infoDesplegable5: string;
   infoDesplegable6: string;
 }
-const { title, punto1, punto2, subtitle, img, infoDesplegable1, infoDesplegable2, infoDesplegable3, infoDesplegable4, infoDesplegable5, infoDesplegable6, img2, img3 } = Astro.props;
+const { title, punto1, punto2, subtitle, contentmedia1, contentmedia, img, infoDesplegable1, infoDesplegable2, infoDesplegable3, infoDesplegable4, infoDesplegable5, infoDesplegable6, img2, img3 } = Astro.props;
 
 ---
 
 <section class="container" id="inicio">
   <h2 class="mb-5 text-6xl mt-8">{title}</h2>
     <ContentMedia imgSrc={img}>
-      <h2>¿Qué es la ortodoncia?</h2>
+      <h2>{contentmedia}</h2>
       <p class="text-xl">
-        La ortodoncia es una especialidad odontológica que estudia, previene y corrige las alteraciones del desarrollo, las formas de las arcadas dentarias y la posición de los maxilares, con el fin de restablecer el equilibrio morfológico y funcional de la boca y de la cara, mejorando también la estética facial.
-        Para este tipo de tratamiento se utilizan principalmente tres tipos de aparatos.
+        {contentmedia1}
       </p>
     </ContentMedia>
 	<!-- Cambios -->
@@ -57,7 +59,7 @@ const { title, punto1, punto2, subtitle, img, infoDesplegable1, infoDesplegable2
 				<li>{infoDesplegable4}</li>
 				<li>{infoDesplegable5}</li>
 				<li>{infoDesplegable6}</li>
-        <slot name="punto2"/>
+        <li><slot name="punto2"/></li>
 			</ul>
 		</div>
 	</div>

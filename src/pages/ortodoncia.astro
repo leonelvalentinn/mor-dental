@@ -9,6 +9,7 @@ import chequeo from "../assets/img/iconos/chequeo-dental.png"
 import mandibula from "../assets/img/iconos/mandibula.png"
 import Servicio from '../components/Servicio.astro'
 import Casos from '../components/Casos.astro'
+import Botonesflotantes from '../components/BotonesFlotantes.astro'
 ---
 
 <DefaultLayout title="Ortodoncia">
@@ -18,26 +19,26 @@ import Casos from '../components/Casos.astro'
     subtitle='Puntos Importantes'
     punto1='Tipos de aparatos' 
     punto2='Cuidado de tus brackets' 
-    infoDesplegable1='Brackets'
-    infoDesplegable2='Invisialign'
-    infoDesplegable3='uidado de tus brackets'
-    infoDesplegable4='uidado de tus brackets'
-    infoDesplegable5='uidado de tus brackets'
-    infoDesplegable6='uidado de tus brackets'
+    contentmedia='¿Qué es la ortodoncia?'
+    contentmedia1='La ortodoncia es una especialidad odontológica que estudia, previene y corrige las alteraciones del desarrollo, las formas de las arcadas dentarias y la posición de los maxilares, con el fin de restablecer el equilibrio morfológico y funcional de la boca y de la cara, mejorando también la estética facial. Para este tipo de tratamiento se utilizan principalmente tres tipos de aparatos.'
+    infoDesplegable1='BRACKETS METÁLICOS: De todos los tipos de brackets son los más conocidos y menos estéticos.'
+    infoDesplegable2='ORTODONCIA INVISIBLE: Es un tratamiento que actualmente está en auge y parece ser que podría llegar a sustituir a la ortodoncia tradicional.'
+    infoDesplegable3='BRACKETS AUTOLIGABLES: Con estos brackets evitamos llevar las gomas que sujetan el arco al bracket. Estos sujetan el arco mediante una pestañita que tienen.'
+    infoDesplegable4='Cepillado tres veces al día: Este primer consejo es fundamental, ya que es la base de la higiene diaria.'
+    infoDesplegable5='Usar un irrigador dental: El cepillado diario debe complementarse con este accesorio.'
+    infoDesplegable6='Usar un cepillo interdental: Igual que con el irrigador, este tipo de cepillo permite llegar a zonas dentales de difícil acceso.'
     img="/Servicios/Ortodoncia/ortodoncia.jpg"
     img2='/Servicios/Ortodoncia/ortodoncia-3.jpg'
     img3="/Servicios/Ortodoncia/Ortodoncia-2.jpg"
   >
-  <!--<li slot="punto1">Hola</li>
-  <li slot="punto2">HOlasssss</li>-->
+  <!--<li slot="punto1">Hola</li>-->
+  <span slot="punto2">Cuidado con los alimentos: Cuando estás con un tratamiento de ortodoncia con brackets, hay que ser especialmente cauteloso con las comidas.</span>
   </Servicio>
   <Casos 
-    img1=''
-    img2=''
-    img3=''
-    img4=''
-    img5=''
+    img1='/Servicios/Ortodoncia/Casos/caso.jpg'
+    img2='/Servicios/Ortodoncia/Casos/caso-2.png'
     title='Ortodoncia'
-    imgSrc='/Servicios/Ortodoncia/Casos/caso-1.jpg'
+    imgSrc='/Servicios/Ortodoncia/Casos/caso-3.jpg'
   />
+  <Botonesflotantes />
 </DefaultLayout>

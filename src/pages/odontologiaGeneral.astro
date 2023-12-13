@@ -1,0 +1,32 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Header from '../components/Header.astro'
+import Servicio from '../components/Servicio.astro'
+import Casos from '../components/Casos.astro'
+import Botonesflotantes from '../components/BotonesFlotantes.astro';
+---
+
+<DefaultLayout title="Odontología General">
+  <Header />
+  <Servicio 
+    title='Odontología General' 
+    subtitle='Puntos Importantes'
+    punto1='¿Qué tratamientos engloba la odontología general?' 
+    punto2='Tips de cuidado general' 
+    contentmedia='¿Qué es la Odontología General?'
+    contentmedia1='La Odontología General es la especialidad que se centra en el diagnóstico, tratamiento y prevención de los problemas primarios que tienen que ver con la salud bucodental. Incluye no sólo a los problemas que afectan a los dientes, sino también a las encías, el tejido periodontal y la articulación temporomandibular.'
+    infoDesplegable1='Limpieza dental: también llamada profilaxis dental, se hace para eliminar la placa y el cálculo (sarro) que se acumula en los dientes durante el paso del tiempo.'
+    infoDesplegable2='Rellenos: son materiales especiales que el dentista coloca en los dientes para reparar el daño que ha dejado una caries o los defectos en la superficie del diente. '
+    infoDesplegable3='Blanqueamiento dental: consiste en un tratamiento no invasivo que mejora la apariencia de los dientes, aclarándolos y dejándolos más blancos.'
+    infoDesplegable4='Cepilla tus dientes todos los días'
+    infoDesplegable5='Cambia tu cepillo de dientes regularmente'
+    infoDesplegable6='Usa hilo dental en cada cepillado'
+    img="/Servicios/General/odontologia.jpg"
+    img2='/Servicios/General/odontologia-1.jpg'
+    img3="/Servicios/General/odontologia.jpg"
+  >
+  <!--<li slot="punto1">Hola</li>-->
+  <span slot="punto2">Visita a tu dentista regularmente: Detectar y tratar pronto los problemas de las encías, los dientes y la boca puede ayudar a garantizar una buena salud oral de por vida.</span>
+  </Servicio>
+  <Botonesflotantes />
+</DefaultLayout>

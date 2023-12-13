@@ -1,0 +1,32 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Header from '../components/Header.astro'
+import Servicio from '../components/Servicio.astro'
+import Casos from '../components/Casos.astro'
+import Botonesflotantes from '../components/BotonesFlotantes.astro';
+---
+
+<DefaultLayout title="Odontopediatría">
+  <Header />
+  <Servicio 
+    title='Odontopediatría' 
+    subtitle='Puntos Importantes'
+    punto1='¿A qué edad hay que visitar a un odontopediatra?' 
+    punto2='¿Qué tratamientos infantiles realizamos?' 
+    contentmedia='¿Qué es la Odontopediatría?'
+    contentmedia1='Es la rama de la odontología encargada de tratar a niños y recién nacidos. Desde el nacimiento hasta los 6 años, cuida de los dientes temporales y, a partir de los 12 años, controla el inicio de la dentición definitiva. Somos especialistas que se ocupan de detectar aportunamente patologías bucales o anomalías en la posición de los dientes, encías o maloclusiones de la infancia para poder tratarlas y corregirlas a tiempo. Es por eso que resulta tan importante realizar una visita al odontopediatra de forma temprana.'
+    infoDesplegable1='El primer diente acostumbra a aparecer en los primeros 6 meses de vida. A partir de ese momento es preciso controlar el crecimiento de los dientes temporales (dientes de leche), así como asegurarse de llevar a cabo una correcta higiene bucal.'
+    infoDesplegable2='La primera visita se recomienda realizarla durante el primer año siempre que se detecte algún problema bucal.'
+    infoDesplegable3='Si el crecimiento de los dientes temporales y su oclusión es correcta y no aparece ninguno de los problemas citados anteriormente, la primera visita al odontopediatra puede esperar hasta los 5-6 años.'
+    infoDesplegable4='Caries: Es una enfermedad del diente que se caracteriza por la destrucción de sus tejidos como consecuencia de la desmineralización provocada por los ácidos que genera la placa bacteriana'
+    infoDesplegable5='Maloclusiones: Las maloclusiones son uno de los problemas más habituales en salud bucodental, después de la caries.'
+    infoDesplegable6='Anquilosis: La anquilosis en dientes temporales se define como la fijación esporádica de un diente al hueso alveolar.'
+    img="/Servicios/Odontopediatria/odontopediatria.jpg"
+    img2='/Servicios/Odontopediatria/odontopediatria-1.jpg'
+    img3="/Servicios/Odontopediatria/odontopediatria-2.jpg"
+  >
+  <!--<li slot="punto1">Hola</li>-->
+  <span slot="punto2">Colocación de mantenedores de espacio: Los dientes temporales guardan el espacio de los futuros dientes permanentes.</span>
+  </Servicio>
+  <Botonesflotantes />
+</DefaultLayout>

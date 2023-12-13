@@ -1,0 +1,32 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Header from '../components/Header.astro'
+import Servicio from '../components/Servicio.astro'
+import Casos from '../components/Casos.astro'
+import Botonesflotantes from '../components/BotonesFlotantes.astro';
+---
+
+<DefaultLayout title="Cirugía Maxilofacial">
+  <Header />
+  <Servicio 
+    title='Cirugía Maxilofacial' 
+    subtitle='Puntos Importantes'
+    punto1='¿Qué patologías se tratan con cirugía?' 
+    punto2='¿Qué técnicas quirúrgicas realizamos? ' 
+    contentmedia='¿Qué es la Cirugía Maxilofacial?'
+    contentmedia1='La cirugía maxilofacial es la especialidad médico-quirúrgica que se centra en el estudio, diagnóstico, tratamiento y rehabilitación de las enfermedades congénitas o adquiridas de la cavidad oral, el esqueleto facial y las estructuras cervicales relacionadas.'
+    infoDesplegable1='Falta de hueso del maxilar o la mandíbula: La pérdida ósea suele ser difícil de identificar en su etapa inicial y, si no se acude al dentista de forma regular'
+    infoDesplegable2='Problemas en las glándulas salivares y la mucosa oral: Debido al gran número de enfermedades sistémicas que tienen manifestaciones en la mucosa oral'
+    infoDesplegable3='Traumatismos faciales: Cuando un diente recibe un golpe o se rompe, su estructura se debilita haciendo que la estimulación que transmite al hueso se detenga'
+    infoDesplegable4='Muelas del juicio: La extracción de estas muelas es rápida e indolora, en la que se utilizan técnicas mínimamente invasivas que agilizan la recuperación y la reducen significativamente. Se realiza con anestesia local y dura entre 10 y 30 minutos.'
+    infoDesplegable5='Dientes fracturados o con caries: Se llevará a cabo una extracción de un diente roto, partido, fracturado o afectado por una importante caries dental siempre que no pueda ser reconstruido.'
+    infoDesplegable6='Mordida incorrecta (Malaoclusión): En caso de sufrir una mala oclusión severa o presentar complejos que impidan el desarrollo una vida normal, se puede tratar el problema de mordida incorrecta con cirugía'
+    img="/Servicios/Maxilofacial/maxilofacial.jpg"
+    img2='/Servicios/Maxilofacial/maxilofacial-1.jpg'
+    img3="/Servicios/Maxilofacial/maxilofacial-2.jpg"
+  >
+  <!--<li slot="punto1">Hola</li>-->
+  <span slot="punto2">Bruxismo o rechinamiento de los dientes</span>
+  </Servicio>
+  <Botonesflotantes />
+</DefaultLayout>

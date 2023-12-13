@@ -1,0 +1,32 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Header from '../components/Header.astro'
+import Servicio from '../components/Servicio.astro'
+import Casos from '../components/Casos.astro'
+import Botonesflotantes from '../components/BotonesFlotantes.astro';
+---
+
+<DefaultLayout title="Ortopedia Dentofacial">
+  <Header />
+  <Servicio 
+    title='Ortopedia Dentofacial' 
+    subtitle='Puntos Importantes'
+    punto1='Algunas ventajas de aparatología removible son:' 
+    punto2='¿Qué patologías trata?' 
+    contentmedia='¿Qué es la Ortopedia Dentofacial?'
+    contentmedia1='La Ortopedia Dentofacial es la especialidad que se encarga de corregir o modificar patrones esqueletales mediante estímulos generados por aparatología fija o removible. Esta utiliza instrumentos removibles muy fáciles de quitar y poner por el paciente. Es importante colaborar al máximo puesto que gran parte del éxito del tratamiento dependen de la cooperación y responsabilidad del usuario.'
+    infoDesplegable1='Complementa perfectamente los resultados de un tratamiento convencional de Ortodoncia'
+    infoDesplegable2='Elimina la necesidad de una Cirugía Maxilofacial'
+    infoDesplegable3='La higiene es mucho más sencilla'
+    infoDesplegable4='Se utiliza en pacientes que presentan algún tipo de problemas a nivel esqueletal, ya sea deficiencias o excesos donde se estimula al hueso para redirigir la dirección de su crecimiento, con el fin de conseguir una dentición en posición ideal, oclusión equilibrada y armonía facial.'
+    infoDesplegable5='Masticación'
+    infoDesplegable6='Succión'
+    img="/Servicios/Ortopedia/ortopedia.jpg"
+    img2='/Servicios/Ortopedia/ortopedia-1.jpg'
+    img3="/Servicios/Ortopedia/ortopedia-2.jpg"
+  >
+  <!--<li slot="punto1">Hola</li>-->
+  <span slot="punto2">Respiración</span>
+  </Servicio>
+  <Botonesflotantes />
+</DefaultLayout>
