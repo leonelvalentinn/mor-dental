@@ -4,9 +4,9 @@ import { Media } from 'accessible-astro-components'
 const { imgSrc, reverseImg = false } = Astro.props
 ---
 
-<section class="my-40">
+<section class="my-10">
   <div class="container">
-    <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-24">
       {!reverseImg ? <div class="fondo relative">
         <Media class="rounded-lg" src={imgSrc} />
         </div> : ''}

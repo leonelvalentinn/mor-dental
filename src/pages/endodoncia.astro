@@ -1,0 +1,57 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Header from '../components/Header.astro'
+import nino from "../assets/img/iconos/nino.png"
+import endodoncia from "../assets/img/iconos/endodoncia.png"
+import tirantes from "../assets/img/iconos/tirantes.png"
+import cirugia from "../assets/img/iconos/cirugia.png"
+import chequeo from "../assets/img/iconos/chequeo-dental.png"
+import mandibula from "../assets/img/iconos/mandibula.png"
+import Servicio from '../components/Servicio.astro'
+import Casos from '../components/Casos.astro'
+import Botonesflotantes from '../components/BotonesFlotantes.astro'
+---
+
+<DefaultLayout title="Endodoncia">
+  <Header />
+  <Servicio 
+    title='Endodoncia' 
+    subtitle='Puntos Importantes'
+    punto1='Tipos de endodoncia' 
+    punto2='Fases del tratamiento de endodoncia' 
+    contentmedia='¿Qué es la Endodoncia?'
+    contentmedia1='Es un tratamiento para dientes infectados o descompuestos gravemente cuya causa parte del nervio del diente. El tratamiento consiste en reparar y salvar los dientes eliminando la pulpa dental, para después limpiar y sellar el interior del diente. La pulpa dental es el tejido del interior del diente que contiene vasos sanguíneos, nervios y tejido conectivo. '
+    infoDesplegable1='Endodoncia unirradicular: se realiza en aquellas piezas dentales que únicamente cuentan con una raíz o conducto. Suelen ser los incisivos y caninos.'
+    infoDesplegable2='Endodoncia birradicular: este procedimiento se efectúa en dientes con dos conductos como los molares inferiores o los segundos premolares superiores.'
+    infoDesplegable3='Endodoncia multirradicular: se lleva a cabo en dientes con tres o más conductos como los molares superiores.'
+    infoDesplegable4=''
+    infoDesplegable5='La endodoncia es un tratamiento que consiste en sanar un diente infectado de manera grave'
+    infoDesplegable6='El tratamiento consta de cinco fases que comienza con una radiografía y diagnóstico del estado del paciente, y finaliza una vez que el diente ya está restaurado.'
+    img="/Servicios/Endodoncia/endodoncia.jpg"
+    img2='/Servicios/Endodoncia/endodoncia-2.jpg'
+    img3="/Servicios/Endodoncia/endodoncia-1.jpg"
+  >
+  <div slot="punto2" class="slot1">
+    <ul>
+      <li>Radiografía y diagnóstico</li>
+      <li>Anestesia local</li>
+      <li>Extracción pulpar</li>
+      <li>Sellado radicular.</li>
+      <li>Restauración del diente</li>
+    </ul>
+  </div>
+  </Servicio>
+  <Botonesflotantes />
+</DefaultLayout>
+
+<style>
+  .slot1 ul {
+    list-style: circle !important;
+  }
+  @media (min-width: 768px) {
+    .slot1 {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+  }
+</style>

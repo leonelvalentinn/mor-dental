@@ -1,27 +1,27 @@
 ---
-import cliente1 from "../assets/img/clientes/cliente1.png"
-import cliente2 from "../assets/img/clientes/cliente2.png"
-import cliente3 from "../assets/img/clientes/cliente3.png"
-import cliente4 from "../assets/img/clientes/cliente4.png"
-import cliente5 from "../assets/img/clientes/cliente5.png"
-import cliente6 from "../assets/img/clientes/cliente6.png"
-import cliente7 from "../assets/img/clientes/cliente7.png"
-import { Image } from "astro:assets"
+const cliente1 = "/clientes/cliente1.png"
+const cliente2 = "/clientes/cliente2.png"
+const cliente3 = "/clientes/cliente3.png"
+const cliente4 = "/clientes/cliente4.png"
+const cliente5 = "/clientes/cliente5.png"
+const cliente6 = "/clientes/cliente6.png"
+const cliente7 = "/clientes/cliente7.png"
+import { Media } from 'accessible-astro-components'
 ---
 
 <section class="my-20">
   <div class="container">
-    <h2 class="mb-16 text-6xl">Testimonios</h2>
+    <h2 class="text-4xl mb-16 sm:text-6xl">Testimonios</h2>
     <div>
       <!-- Slider main container -->
-      <div class="swiper">
+      <div class="swiper swiper2">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
           <div class="swiper-slide">
             <div class="item-testimonios">
               <div>
-                <Image src={cliente1} alt="Mor Logo" width="50" height="50" />
+                <Media src={cliente1} alt="Mor Logo" class:list="w-12 z-10"/>
                 <h3>Rogelio Zapata</h3>
               </div>
               <div class="rating">
@@ -37,7 +37,7 @@ import { Image } from "astro:assets"
           <div class="swiper-slide">
             <div class="item-testimonios">
               <div>
-                <Image src={cliente2} alt="Mor Logo" width="50" height="50" />
+                <Media src={cliente2} alt="Mor Logo" class:list="w-12 z-10"/>
                 <h3>K M</h3>
               </div>
               <div class="rating">
@@ -54,7 +54,7 @@ import { Image } from "astro:assets"
           <div class="swiper-slide">
             <div class="item-testimonios">
               <div>
-                <Image src={cliente3} alt="Mor Logo" width="50" height="50" />
+                <Media src={cliente3} alt="Mor Logo" class:list="w-12 z-10"/>
                 <h3>Alely Rodriguez Avitia</h3>
               </div>
               <div class="rating">
@@ -70,7 +70,7 @@ import { Image } from "astro:assets"
           <div class="swiper-slide">
             <div class="item-testimonios">
               <div>
-                <Image src={cliente4} alt="Mor Logo" width="50" height="50" />
+                <Media src={cliente4} alt="Mor Logo" class:list="w-12 z-10"/>
                 <h3>Damariz Mariscal</h3>
               </div>
               <div class="rating">
@@ -86,7 +86,7 @@ import { Image } from "astro:assets"
           <div class="swiper-slide">
             <div class="item-testimonios">
               <div>
-                <Image src={cliente5} alt="Mor Logo" width="50" height="50" />
+                <Media src={cliente5} alt="Mor Logo" class:list="w-12 z-10"/>
                 <h3>Magaly Parra</h3>
               </div>
               <div class="rating">
@@ -102,7 +102,7 @@ import { Image } from "astro:assets"
           <div class="swiper-slide">
             <div class="item-testimonios">
               <div>
-                <Image src={cliente6} alt="Mor Logo" width="50" height="50" />
+                <Media src={cliente6} alt="Mor Logo" class:list="w-12 z-10"/>
                 <h3>Anahi Olivas</h3>
               </div>
               <div class="rating">
@@ -118,7 +118,7 @@ import { Image } from "astro:assets"
           <div class="swiper-slide">
             <div class="item-testimonios">
               <div>
-                <Image src={cliente7} alt="Mor Logo" width="50" height="50" />
+                <Media src={cliente7} alt="Mor Logo" class:list="w-12 z-10"/>
                 <h3>St. Patrick Renato</h3>
               </div>
               <div class="rating">
@@ -149,7 +149,7 @@ import { Image } from "astro:assets"
   --swiper-navigation-sides-offset: 10px;
   --swiper-navigation-color: var(--primary-300);
   }
-  .swiper {
+  .swiper2 {
     width: 100%;
     height: 100%;
   }
@@ -183,7 +183,7 @@ import { Image } from "astro:assets"
 </style>
 <script>
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('.swiper2', {
   // Optional parameters
   slidesPerView: '1',
   direction: 'horizontal',

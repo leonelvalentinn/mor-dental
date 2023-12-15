@@ -1,6 +1,6 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import Header from '../components/Header.astro'
+import HeaderExt from '../components/HeaderExt.astro'
 import nino from "../assets/img/iconos/nino.png"
 import endodoncia from "../assets/img/iconos/endodoncia.png"
 import tirantes from "../assets/img/iconos/tirantes.png"
@@ -13,32 +13,55 @@ import Botonesflotantes from '../components/BotonesFlotantes.astro'
 ---
 
 <DefaultLayout title="Implantología">
-  <Header />
+  <HeaderExt />
   <Servicio 
     title='Implantología' 
     subtitle='Puntos Importantes'
-    punto1='Tipos de aparatos' 
-    punto2='Cuidado de tus brackets' 
+    punto1='¿Qué implantes encontramos?' 
+    punto2='¿Cuándo es necesario un implante dental?' 
     contentmedia='¿Qué es la Implantología?'
     contentmedia1='La implantología dental es una disciplina odontológica que se dedica al reemplazo de dientes perdidos mediante la colocación quirúrgica de un implante dental en el maxilar o la mandíbula. A día de hoy se considera una de las técnicas más eficaces de rehabilitación dental.'
-    infoDesplegable1='BRACKETS METÁLICOS: De todos los tipos de brackets son los más conocidos y menos estéticos.'
-    infoDesplegable2='ORTODONCIA INVISIBLE: Es un tratamiento que actualmente está en auge y parece ser que podría llegar a sustituir a la ortodoncia tradicional.'
-    infoDesplegable3='BRACKETS AUTOLIGABLES: Con estos brackets evitamos llevar las gomas que sujetan el arco al bracket. Estos sujetan el arco mediante una pestañita que tienen.'
-    infoDesplegable4='Cepillado tres veces al día: Este primer consejo es fundamental, ya que es la base de la higiene diaria.'
-    infoDesplegable5='Usar un irrigador dental: El cepillado diario debe complementarse con este accesorio.'
-    infoDesplegable6='Usar un cepillo interdental: Igual que con el irrigador, este tipo de cepillo permite llegar a zonas dentales de difícil acceso.'
+    infoDesplegable1='Subperiósticos o Yuxta-óseos: Este método de restauración dental consiste en la inserción de un marco de metal por debajo de la encía. La pieza de metal contiene, a su vez, unos pilares donde se ancla una prótesis.'
+    infoDesplegable2='Endo-óseos: Es el método de restauración dental más común, siendo una alternativa muy recomendable para aquellas personas que deseen una importante mejora estética y funcional.'
+    infoDesplegable3='Existen varios tipos de implantes endo-óseos:'
+    infoDesplegable4='Pérdida dental a causa de una afección (caries, piorrea o periodontitis).'
+    infoDesplegable5='Dientes que no completan su desarrollo por factores congénitos.'
+    infoDesplegable6='Fracturas dentales debido a algún accidente y/o traumatismo.'
     img="/Servicios/Implantologia/implantologia.jpg"
     img2='/Servicios/Implantologia/implantologia-1.jpg'
-    img3="/Servicios/Ortodoncia/Ortodoncia-2.jpg"
+    img3="/Servicios/Implantologia/implantologia-2.jpg"
   >
-  <!--<li slot="punto1">Hola</li>-->
-  <span slot="punto2">Cuidado con los alimentos: Cuando estás con un tratamiento de ortodoncia con brackets, hay que ser especialmente cauteloso con las comidas.</span>
+  <div slot="punto1" class="slot1">
+    <ul>
+      <li>Cilíndricos: Son implantes poco usados porque el proceso de integración dentro del hueso es más lento comparado con el resto de implantes.</li>
+      <li>Atornillados: Es la modalidad de implantes más común. Presentan la superficie roscada, una característica que permite que el tornillo se fije de forma más rápida al hueso.</li>
+      <li>Laminados: Son implantes únicamente recomendables para sustituir piezas dentales que se localicen en una zona anterior, especialmente en aquellos pacientes que presenten poco hueso. </li>
+    </ul>
+  </div>
+  <span slot="punto2"><strong>¿A partir de qué edad se efectúan los implantes?</strong></span>
+  <div slot="punto2" class="slot1">
+    <ul>
+      <li>Se puede practicar una intervención quirúrgica de este tipo en pacientes jóvenes una vez hayan completado el desarrollo de todas las piezas dentales.</li>
+    </ul>
+  </div>
   </Servicio>
   <Casos 
-    img1='/Servicios/Ortodoncia/Casos/caso.jpg'
-    img2='/Servicios/Ortodoncia/Casos/caso-2.png'
-    title='Ortodoncia'
-    imgSrc='/Servicios/Ortodoncia/Casos/caso-3.jpg'
+    img1='/Servicios/Implantologia/Casos/caso-1.jpg'
+    img2='/Servicios/Implantologia/Casos/caso-2.jpg'
+    title='Implantología'
+    imgSrc='/Servicios/Implantologia/Casos/caso-3.jpg'
   />
   <Botonesflotantes />
 </DefaultLayout>
+
+<style>
+  .slot1 ul {
+    list-style: circle !important;
+  }
+  @media (min-width: 768px) {
+    .slot1 {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+  }
+</style>

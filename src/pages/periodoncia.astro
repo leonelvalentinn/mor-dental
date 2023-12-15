@@ -1,0 +1,55 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Servicio from '../components/Servicio.astro'
+import Casos from '../components/Casos.astro'
+import Botonesflotantes from '../components/BotonesFlotantes.astro';
+import Headerext from '../components/HeaderExt.astro';
+---
+
+<DefaultLayout title="Periodoncia">
+  <Headerext />
+  <Servicio 
+    title='Periodoncia' 
+    subtitle='Puntos Importantes'
+    punto1='¿Qué enfermedades tratamos?' 
+    punto2='¿Qué hacer después de una intervención?' 
+    contentmedia='¿Qué es la Periodoncia?'
+    contentmedia1='La periodoncia es la rama de la Odontología que trata las enfermedades de las encías y del hueso que sostiene los dientes. Y es que las enfermedades de las encías como la gingivitis y periodontitis son de las causas más comunes de pérdida de dientes, y su control es fundamental.'
+    infoDesplegable1='Gingivitis: Es una reacción inflamatoria de la encía de carácter reversible. Es la forma más frecuente de enfermedad periodontal.'
+    infoDesplegable2='Periodontitis: Es una inflamación e infección de los ligamientos y huesos que sirven de soporte a los dientes. La periodontitis ocurre cuando una infección de las encías (gingivitis) no es tratada.'
+    infoDesplegable3='¿A qué se debe su aparición?'
+    infoDesplegable4='Tras una intervención periodontal, recomendamos:'
+    infoDesplegable5='Dormir con la cabeza ligeramente levantada.'
+    infoDesplegable6='Aplicar hielo a la zona afectada para reducir la inflamación.'
+    img="/Servicios/Periodoncia/periodoncia.jpg"
+    img2='/Servicios/Periodoncia/periodoncia-1.jpg'
+    img3="/Servicios/Periodoncia/periodoncia-2.jpg"
+  >
+  <div slot="punto1" class="slot1">
+    <ul>
+      <li>Bacterias: La placa es un material pegajoso compuesto de bacterias, moco y residuos de alimentos que se acumula en las partes externas de los dientes.</li>
+      <li>Factores agravantes: Existen una serie de factores que pueden agravar la aparición de enfermedades periodontales, por ejemplo, el consumo de tabaco o enfermedades como la diabetes.</li>
+    </ul>
+  </div>
+  <ul slot="punto2">
+    <li>Seguir una dieta blanda y a temperatura ambiente.</li>
+    <li>Aplicar vaselina en la comisura de los labios en caso de sentir molestias.</li>
+    <li>Reducir la actividad física durante los primeros días.</li>
+    <li>No fumar en ningún momento durante los 7 primeros días.</li>
+    <li>Limitar la ingesta de alcohol durante los 4 primeros días. </li>
+  </ul>
+  </Servicio>
+  <Botonesflotantes />
+</DefaultLayout>
+
+<style>
+  .slot1 ul {
+    list-style: circle !important;
+  }
+  @media (min-width: 768px) {
+    .slot1 {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+  }
+</style>

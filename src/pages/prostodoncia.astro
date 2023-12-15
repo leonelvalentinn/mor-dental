@@ -1,0 +1,56 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import HeaderExt from '../components/HeaderExt.astro'
+import nino from "../assets/img/iconos/nino.png"
+import endodoncia from "../assets/img/iconos/endodoncia.png"
+import tirantes from "../assets/img/iconos/tirantes.png"
+import cirugia from "../assets/img/iconos/cirugia.png"
+import chequeo from "../assets/img/iconos/chequeo-dental.png"
+import mandibula from "../assets/img/iconos/mandibula.png"
+import Servicio from '../components/Servicio.astro'
+import Casos from '../components/Casos.astro'
+import Botonesflotantes from '../components/BotonesFlotantes.astro'
+---
+
+<DefaultLayout title="Prostodoncia">
+  <HeaderExt />
+  <Servicio 
+    title='Prostodoncia' 
+    subtitle='Puntos Importantes'
+    punto1='¿Qué hacen los prostodoncistas?' 
+    punto2='¿Cómo se hace una prostodoncia?' 
+    contentmedia='¿Qué es la Prostodoncia?'
+    contentmedia1='La prostodoncia es una especialidad de la odontología que se ocupa de diseñar y fabricar las prótesis dentales, cuyo objetivo es recuperar la correcta funcionalidad y estética de la dentadura que se ha visto alterada como consecuencia de la pérdida de uno o varios dientes.'
+    infoDesplegable1='Los prostodoncistas son los especialistas que planifican y llevan a cabo procedimientos relacionados con el reemplazo de dientes naturales o reconstrucción de los mismos, con sustitutos biocompatibles. Algunos de estos tratamientos incluyen:'
+    infoDesplegable2='Carillas de porcelana: las carillas dentales son láminas de cerámica delgadas que cubren las superficies frontales de los dientes, proporcionando una mejora en el color o la forma de los dientes.'
+    infoDesplegable3='Coronas: Son restauraciones dentales que cubren toda la superficie del diente. Fabricadas en porcelana fusionada con metal, zirconio o totalmente cerámicas (porcelana), las coronas se cementan en un diente preparado.'
+    infoDesplegable4='Antes del tratamiento el odontólogo realizará un molde de la mordida y de la zona de la dentadura que se debe sustituir, con el fin de que los técnicos fabriquen mediante la técnica del vaciado un réplica de la dentadura, a partir de la cual elaborarán la prótesis, de tal manera que ésta encaje perfectamente tanto en el lugar de la arcada que le corresponde como con la arcada contraria.'
+    infoDesplegable5='Asimismo, proporcionará a la prótesis un color prácticamente idéntico al de la pieza que sustituye.'
+    infoDesplegable6='Tras su colocación, el odontólogo definirá un protocolo de seguimiento y mantenimiento de la prótesis para garantizar en todo momento su funcionalidad y, en caso necesario, proceder a su reparación o sustitución.'
+    img="/Servicios/Prostodoncia/prostodoncia.jpg"
+    img2='/Servicios/Prostodoncia/prostodoncia-1.jpg'
+    img3="/Servicios/Prostodoncia/prostodoncia-2.jpg"
+  >
+  <li slot="punto1" class="protesis">Prótesis sobre implantes: los implantes se usan para reemplazar una o múltiples piezas dentales. </li>
+  <!--<span slot="punto2"></span>-->
+  </Servicio>
+  <Botonesflotantes />
+</DefaultLayout>
+
+<style>
+  .slot1 ul {
+    list-style: circle !important;
+  }
+  .protesis::before {
+    content: "ö";
+    margin-right: 8px;
+    color: var(--primary-300);
+    font-size: 25px;
+  }
+  @media (min-width: 768px) {
+    .slot1 {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+  }
+</style>

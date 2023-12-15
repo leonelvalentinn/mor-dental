@@ -26,7 +26,7 @@ const { title, punto1, punto2, subtitle, contentmedia1, contentmedia, img, infoD
 ---
 
 <section class="container" id="inicio">
-  <h2 class="mb-5 text-6xl mt-8">{title}</h2>
+  <h2 class="mb-5 text-5xl mt-8 sm:text-6xl">{title}</h2>
     <ContentMedia imgSrc={img}>
       <h2>{contentmedia}</h2>
       <p class="text-xl">
@@ -145,6 +145,7 @@ const { title, punto1, punto2, subtitle, contentmedia1, contentmedia, img, infoD
   }
   .container-desplegable ul {
     list-style:none;
+    max-width: 600px;
   }
   .container-desplegable li::before {
     content: "ö";

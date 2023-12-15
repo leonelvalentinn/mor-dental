@@ -1,13 +1,12 @@
 ---
+import { Media } from 'accessible-astro-components';
 import { Icon } from 'astro-icon'
-import { Image } from 'astro:assets';
-
-const { icon = 'mdi:rocket', title = 'Title', servicio = 'servicio' } = Astro.props
+const { icon, title = 'Title', servicio = 'servicio' } = Astro.props
 
 ---
 
 <div class="feature flex flex-col gap-4" id={title}>
-  <Image src={icon} alt="Icono" width="50" height="50"/>
+  <Media src={icon} alt="Icono" class:list="w-12 z-10"/>
   <div class="content">
     <h3>{title}</h3>
     <p>
@@ -23,6 +22,9 @@ const { icon = 'mdi:rocket', title = 'Title', servicio = 'servicio' } = Astro.pr
 
 <style lang="scss">
   @use '../assets/scss/base/breakpoint' as *;
+  .img-icono {
+    z-index: 99;
+  }
   .content p {
     margin-bottom: 15px;
   }

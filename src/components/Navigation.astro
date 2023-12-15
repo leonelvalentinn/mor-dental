@@ -20,18 +20,47 @@ import logoblanco from "../assets/img/mor.svg"
       <div style="display: none !important;">
         <DarkMode />
       </div>
-      <ResponsiveToggle />
+      <button class="responsive-toggle" id="open">
+        <svg width="26" height="21" aria-hidden="true" fill="var(--action-color)" xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="M2 1.667h24m-24 8h24m-24 8h24"
+            stroke="var(--action-color)"
+            stroke-width="2.667"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path></svg
+        >
+      </button>
+      <div class="overlay" id="mobile-menu">
+        <a id="close" class="close">&times;</a>
+        <div class="overlay-content" id="overlay-content">
+            <a href="/" title="Inicio" class="boton">Inicio</a>
+            <a href="#nosotros" title="Nosotros" rel="external noopener noreferrer" class="boton">Nosotros</a>
+            <a href="/#servicios" title="Servicios" rel="external noopener noreferrer" class="boton">Servicios</a>
+            <a href="#promociones" title="Promociones" rel="external noopener noreferrer" class="boton">Promociones</a>
+            <a href="#testimonios" title="Testimonios" rel="external noopener noreferrer" class="boton">Testimonios</a>
+            <a href="#ubicacion" title="Ubicación" rel="external noopener noreferrer" class="boton">Ubicación</a>
+            <a href="https://api.whatsapp.com/send?phone=526255890381" title="WhatsApp" rel="external noopener noreferrer" class="boton">Contacto</a>
+        </div>
     </div>
-    <nav class="mobile-menu" aria-label="Main navigation mobile" id="mobile-menu">
-      <ul class="menu">
-        <slot />
-      </ul>
-    </nav>
   </div>
 </div>
 
 <script>
   // variables
+  const open = document.getElementById('open')
+  open?.addEventListener('click', function () {
+    document.getElementById("mobile-menu").style.width = "100%";
+  })
+  const close = document.getElementById('close')
+  close?.addEventListener('click', function () {
+    document.getElementById("mobile-menu").style.width = "0%";
+  })
+  const botones = document.querySelector('#overlay-content')
+  botones?.addEventListener('click', function(e) {
+    if(e.target.matches('a.boton')) {
+      document.getElementById("mobile-menu").style.width = "0%";
+    }
+  })
   const mainNav = document.querySelector('#main-navigation')
   const mainMenu = mainNav.querySelector('ul')
   const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')]
@@ -101,7 +130,25 @@ import logoblanco from "../assets/img/mor.svg"
       width: 100%;
     }
   }
-  
+  .responsive-toggle {
+    padding: 0;
+    margin-top: 6px;
+    border: none;
+
+    svg {
+      width: 30px;
+
+      path {
+        transition: fill 0.2s ease-in-out;
+      }
+    }
+
+    &:hover {
+      svg path {
+        fill: var(--primary-400);
+      }
+    }
+  }
   #main-navigation {
     > .container {
       display: flex;
@@ -347,4 +394,51 @@ import logoblanco from "../assets/img/mor.svg"
             transform: translateX(-100vh);
   }
 }
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(33, 49, 63, .95);
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+  }
+  .overlay .overlay-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+  .overlay a{
+    padding: 15px;
+    font-size: 20px;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 600;
+    color:#eceff1;
+    text-decoration: underline !important;
+    text-decoration-thickness: 1px !important;
+    text-decoration-style: wavy !important;
+    text-underline-offset: 7px !important; 
+  }
+
+.header .overlay a:hover,
+.header .overlay a:focus {
+    color: #daa322;
+}
+.overlay .close {
+    position: absolute;
+    top: 50px;
+    right: 17px;
+    font-size: 50px;
+    text-decoration: none !important;
+}
+  @media (min-width: 768px) {
+    .responsive-toggle, .overlay {
+      display: none;
+    }
+  }
 </style>
