@@ -2,21 +2,13 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
 import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
-import ContentMedia from '../components/ContentMedia.astro'
+// import Counter from '../components/Counter.astro'
+// import ContentMedia from '../components/ContentMedia.astro'
 import Slider from '../components/Slider.astro'
 import Header from '../components/Header.astro'
 import Card from '../components/Card.astro'
 import BotonesFlotantes from '../components/BotonesFlotantes.astro'
-const foto5 = "/Slider/_MG_1528.jpg";
-const foto6 = "/Slider/_MG_1314.jpg";
-const foto7 = "/Slider/_MG_1325.jpg";
-const foto1 = "/Slider/_MG_1400.jpg";
-const foto2 = "/Slider/_MG_1410.jpg";
-const foto3 = "/Slider/_MG_1452.jpg";
-const foto4 = "/Slider/_MG_1461.jpg";
-const foto8 = "/Slider/_MG_1489.jpg";
-import { Media } from 'accessible-astro-components'
+import Media from '../components/Media.astro'
 ---
 
 <DefaultLayout title="Inicio">
@@ -25,40 +17,7 @@ import { Media } from 'accessible-astro-components'
   <section class="my-10" id="nosotros">
     <div class="container">
       <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-24">
-          <div class="swiper swiper1">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide">
-                <Media src={foto1} alt="Mor Logo" class:list="rounded-lg"/>
-              </div>
-              <div class="swiper-slide">
-                <Media src={foto2} alt="Mor Logo" class:list="rounded-lg"/>
-              </div>
-              <div class="swiper-slide">
-                <Media src={foto3} alt="Mor Logo" class:list="rounded-lg"/>
-              </div>
-              <div class="swiper-slide">
-                <Media src={foto4} alt="Mor Logo" class:list="rounded-lg"/>
-              </div>
-              <div class="swiper-slide">
-                <Media src={foto5} alt="Mor Logo" class:list="rounded-lg"/>
-              </div>
-              <div class="swiper-slide">
-                <Media src={foto6} alt="Mor Logo" class:list="rounded-lg"/>
-              </div>
-              <div class="swiper-slide">
-                <Media src={foto7} alt="Mor Logo" class:list="rounded-lg"/>
-              </div>
-              <div class="swiper-slide">
-                <Media src={foto8} alt="Mor Logo" class:list="rounded-lg"/>
-              </div>
-            </div>
-    
-              <!-- If we need navigation buttons -->
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-          </div>
+        <Media src="/about.webp" alt="About us" class:list="rounded-lg"/>
         <div class="space-content flex flex-col justify-center">
           <h2>¿Quiénes Somos?</h2>
           <p class="text-xl">
@@ -151,7 +110,7 @@ import { Media } from 'accessible-astro-components'
     }
   }
 </style>
-<script>
+<!-- <script is:inline type="module">
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
   const swiper = new Swiper('.swiper1', {
   // Optional parameters
@@ -178,4 +137,4 @@ import { Media } from 'accessible-astro-components'
     el: '.swiper-scrollbar',
   },
 });
-</script>
+</script> -->
