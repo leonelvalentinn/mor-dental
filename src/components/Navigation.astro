@@ -10,7 +10,7 @@ import DarkMode from './DarkMode.astro'
       <span class="font-bold">Example Logo</span>
     </a>
     <div class="wrapper">
-      <nav class="desktop-menu" aria-label="Main navigation desktop">
+      <nav class="desktop-menu hidden lg:block" aria-label="Main navigation desktop">
         <ul class="menu">
           <slot />  
         </ul>
@@ -26,7 +26,7 @@ import DarkMode from './DarkMode.astro'
             stroke-linejoin="round"></path></svg
         >
       </button>
-      <div class="overlay" id="mobile-menu">
+      <div class="overlay overflow-hidden" id="mobile-menu">
         <a id="close" class="close">&times;</a>
         <div class="overlay-content" id="overlay-content">
             <a href="/" title="Inicio" class="boton">Inicio</a>

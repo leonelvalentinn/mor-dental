@@ -1,21 +1,19 @@
 ---
-import Media from '../components/Media.astro'
-import { Icon } from 'astro-icon'
-const { icon, title = 'Title', servicio = 'servicio' } = Astro.props
+const { title = 'Title' } = Astro.props
 
 ---
 
 <div class="feature flex flex-col gap-4" id={title}>
-  <Media src={icon} alt="Icono" class:list="w-12 z-10"/>
+  <div>
+    <slot></slot>
+  </div>
   <div class="content">
     <h3>{title}</h3>
-    <p>
-      <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
-    </p>
-    <a class="color-secondary phone"
-      href={servicio}
+    <slot name="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
+    <a class="color-secondary"
+      href="#"
     >
-      Ver más
+      Agenda tu cita
     </a>
   </div>
 </div>
@@ -86,10 +84,6 @@ const { icon, title = 'Title', servicio = 'servicio' } = Astro.props
     }
   }
 
-  :global(.feature .icono) {
-    width: 4rem;
-    color: var(--action-color);
-  }
   .feature .llamada {
     color: var(--neutral-900) !important;
   }

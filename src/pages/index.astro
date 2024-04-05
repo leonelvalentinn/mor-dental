@@ -8,7 +8,11 @@ import Slider from '../components/Slider.astro'
 import Header from '../components/Header.astro'
 import Card from '../components/Card.astro'
 import BotonesFlotantes from '../components/BotonesFlotantes.astro'
-import Media from '../components/Media.astro'
+import Nino from '../components/icons/Nino.astro'
+import Cirugia from '../components/icons/Cirugia.astro'
+import Brackets from '../components/icons/Brackets.astro'
+import Implante from '../components/icons/Implante.astro'
+import Diente from '../components/icons/Diente.astro'
 ---
 
 <DefaultLayout title="Inicio">
@@ -17,14 +21,15 @@ import Media from '../components/Media.astro'
   <section class="my-10" id="nosotros">
     <div class="container">
       <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-24">
-        <Media src="/about.webp" alt="About us" class:list="rounded-lg"/>
+        <article class="rounded-xl h-fit p-10 bg-gradient-to-tr from-secondary400 to-primary200">
+          <img src="/about.webp" alt="About us" class="rounded-lg"/>
+        </article>
         <div class="space-content flex flex-col justify-center">
-          <h2>¿Quiénes Somos?</h2>
+          <h2 class="text-4xl md:text-6xl">¿Quiénes Somos?</h2>
           <p class="text-xl">
-            Mör Centro Dental está formado por un equipo de primer nivel, cuya gestión se basa en valores profesionales y éticos. 
-            Tenemos como objetivo ofrecer un servicio de calidad a las necesidades de cada paciente.
-            El trabajo en equipo y los conocimientos de los especialistas son claves para ofrecer un servicio diferenciado que dé respuesta, incluso, a los casos más complejos.
-            El Dr. Juan Moreno es el encargado del equipo de especialistas, con una trayectoria profesional enfocada principalmente en ortodoncia.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolores modi adipisci at molestiae debitis delectus quis. 
+            Similique ex doloremque illo quaerat, praesentium ab maxime repudiandae possimus pariatur asperiores consequuntur.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolores modi adipisci at molestiae debitis delectus quis.
           </p>
         </div>
       </div>
@@ -35,31 +40,56 @@ import Media from '../components/Media.astro'
       <h2 class="mb-16 text-6xl">Servicios</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <Feature icon="/iconos/diente.png" title="Odontología General" servicio="/odontologiaGeneral" id="">
-          Es la especialidad que se centra en el diagnóstico, tratamiento y prevención de los problemas primarios de la boca.
+          <Diente className="w-16 h-16"/>
+          <p slot="info" class="mb-4">
+            Es la especialidad que se centra en el diagnóstico, tratamiento y prevención de los problemas primarios de la boca.
+          </p>
         </Feature>
-        <Feature icon="/iconos/cirugia.png" title="Cirugía Maxilofacial" servicio="/maxilofacial" id="Cirugia">
-          Extracciones de dientes, alargamiento coronario y todo lo relacionado con la regeneración ósea guiada.
+        <Feature title="Cirugía Maxilofacial" servicio="/maxilofacial" id="Cirugia">
+          <Cirugia className="w-16 h-16"/>
+          <p slot="info" class="mb-4">Extracciones de dientes, alargamiento coronario y todo lo relacionado con la regeneración ósea guiada.</p>
         </Feature>
         <Feature icon="/iconos/mandibula.png" title="Ortopedia Dentofacial" servicio="/ortopedia" id="Ortopedia">
-          Corregimos tanto la posición de los dientes como las anomalías en la estructura ósea facial.
+          <Cirugia className="w-16 h-16"/>
+          <p slot="info" class="mb-4">
+            Corregimos tanto la posición de los dientes como las anomalías en la estructura ósea facial.
+          </p>
         </Feature>
         <Feature icon="/iconos/endodoncia.png" title="Endodoncia" servicio="/endodoncia" id="Endodoncia">
-          La formación y experiencia de nuestro equipo permite salvar piezas dentales naturales muy deterioradas y con afectación nerviosa.
+          <Cirugia className="w-16 h-16"/>
+          <p slot="info" class="mb-4">
+            La formación y experiencia de nuestro equipo permite salvar piezas dentales naturales muy deterioradas y con afectación nerviosa.
+          </p>
         </Feature>
         <Feature icon="/iconos/tirantes.png" title="Ortodoncia" servicio="/ortodoncia" id="Ortodoncia">
-          Mejoramos su sonrisa usando los brackets metálicos, estéticos o los de microcristales de zafiro, que ofrecen mayor estética.
+          <Cirugia className="w-16 h-16"/>
+          <p slot="info" class="mb-4">
+            Mejoramos su sonrisa usando los brackets metálicos, estéticos o los de microcristales de zafiro, que ofrecen mayor estética.
+          </p>
         </Feature>
         <Feature icon="/iconos/nino.png" title="Odontopediatría" servicio="/odontopediatria" id="Odontopediatria">
-          Contamos con los mejores especialistas enfocados en el diagnóstico y tratamiento de la población infantil.
+          <Nino className="w-16 h-16"/>
+          <p slot="info" class="mb-4">
+            Contamos con los mejores especialistas enfocados en el diagnóstico y tratamiento de la población infantil.
+          </p>
         </Feature>
         <Feature icon="/iconos/implante-dental.png" title="Implantología" servicio="/implantologia" id="Restauradora">
-          Disciplina dedicada al reemplazo de dientes perdidos mediante la colocación quirúrgica de un implante.
+          <Implante className="w-16 h-16"/>
+          <p slot="info" class="mb-4">
+            Disciplina dedicada al reemplazo de dientes perdidos mediante la colocación quirúrgica de un implante.
+          </p>
         </Feature>
         <Feature icon="/iconos/chequeo-dental.png" title="Periodoncia" servicio="/periodoncia" id="Restauradora">
-          Especialidad de la odontología que trata las enfermedades de las encías y del hueso que sostiene los dientes.
+          <Cirugia className="w-16 h-16"/>
+          <p slot="info" class="mb-4">
+            Especialidad de la odontología que trata las enfermedades de las encías y del hueso que sostiene los dientes.
+          </p>
         </Feature>
         <Feature icon="/iconos/corona-dental.png" title="Prostodoncia" servicio="/prostodoncia" id="Restauradora">
-          Especialidad de la odontología que se ocupa de diseñar y fabricar las prótesis dentales.
+          <Cirugia className="w-16 h-16"/>
+          <p slot="info" class="mb-4">
+            Especialidad de la odontología que se ocupa de diseñar y fabricar las prótesis dentales.
+          </p>
         </Feature>
       </div>
     </div>
@@ -68,11 +98,10 @@ import Media from '../components/Media.astro'
     <div class="container">
       <h2 class="text-4xl mb-16 sm:text-6xl">Promociones</h2>
       <div class="promociones">
-        <Card imgSrc="/blanqueamiento.png"/>
-        <Card imgSrc="/brackets.png"/>
-        <Card imgSrc="/coronas.png"/>
-        <Card imgSrc="/diseno-sorisa.png"/>
-        <Card imgSrc="/implante.png"/>
+        <Card imgSrc="/promo.webp"/>
+        <Card imgSrc="/promo.webp"/>
+        <Card imgSrc="/promo.webp"/>
+        <Card imgSrc="/promo.webp"/>
       </div>
     </div>
   </section>

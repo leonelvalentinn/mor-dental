@@ -1,0 +1,26 @@
+---
+import Media from "./Media.astro";
+
+interface Props {
+  imgSrc: string
+  name: string
+  reviewText: string
+}
+
+const { imgSrc, name, reviewText } = Astro.props
+---
+
+<article class="p-5 flex justify-center items-center flex-col border-2 rounded-xl border-[var(--action-color)]">
+  <div class="w-full flex justify-center items-center flex-col">
+    <Media src={imgSrc} alt="Foto de perfil del paciente" class:list="w-12 z-10"/>
+    <h3>{name}</h3>
+  </div>
+  <div class="rating grid grid-cols-5 gap-1">
+    <i class="bi bi-star-fill text-yellow-400"></i>
+    <i class="bi bi-star-fill text-yellow-400"></i>
+    <i class="bi bi-star-fill text-yellow-400"></i>
+    <i class="bi bi-star-fill text-yellow-400"></i>
+    <i class="bi bi-star-fill text-yellow-400"></i>
+  </div>
+  <p>{reviewText}</p>
+</article>

@@ -1,4 +1,4 @@
-<div class="container"  id="ubicacion">
+<section class="container text-neutral-600" id="ubicacion">
   <div class="call-to-action flex gap-12 rounded-xl p-12 container-mapa">
     <div class="texto flex flex-col items-center">
       <h2 class="text-center text-3xl md:text-5xl">Dirección</h2>
@@ -14,14 +14,14 @@
         </div>
         <p class="text-xl">Domingo: Cerrado</p>
       </div>
-      <div class="social-media">
-        <a href="https://www.facebook.com/morcentrodental?locale=es_LA" target="_blank"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/mor_centro_dental?igshid=YTQwZjQ0NmI0OA==" target="_blank"><i class="bi bi-instagram"></i></a>
+      <div class="mt-5 flex justify-center items-center">
+        <a class="mr-4" href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
       </div>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7018.856619352689!2d-106.85261456062094!3d28.406330265867787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea43c28cc8e075%3A0xa187081de0c666ac!2sM%C3%B6r%20Centro%20Dental!5e0!3m2!1ses!2smx!4v1701818558549!5m2!1ses!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1056.0892942761839!2d-99.13969064136586!3d19.39189731207765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDentarios!5e0!3m2!1ses-419!2smx!4v1712355971934!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
-</div>
+</section>
 
 <style lang="scss">
   .social-media {
@@ -53,11 +53,15 @@
   }
   .call-to-action a:not(button),
   .call-to-action a:not(button):visited {
-    padding: 10px 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--neutral-900);
     font-weight: bold;
     border: 3px solid var(--neutral-900);
-    border-radius: 3px;
+    border-radius: 50%;
     text-decoration: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
