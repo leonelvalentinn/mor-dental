@@ -1,15 +1,13 @@
 ---
-import ResponsiveToggle from './ResponsiveToggle.astro'
-import { DarkMode } from 'accessible-astro-components'
-import { Image } from "astro:assets"
-import logo from "../assets/img/Logo-mor.webp"
-import logoblanco from "../assets/img/mor.svg"
+// import { DarkMode } from 'accessible-astro-components'
+import DarkMode from './DarkMode.astro'
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
-      <Image src={logoblanco} alt="Mor Logo" width="200" height="50" />
+      <img src="/logo-example.svg" alt="Mor Logo" loading="eager" class="w-full max-w-10" />
+      <span class="font-bold">Example Logo</span>
     </a>
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
@@ -17,9 +15,7 @@ import logoblanco from "../assets/img/mor.svg"
           <slot />  
         </ul>
       </nav>
-      <div style="display: none !important;">
-        <DarkMode />
-      </div>
+      <DarkMode />
       <button class="responsive-toggle" id="open">
         <svg width="26" height="21" aria-hidden="true" fill="var(--action-color)" xmlns="http://www.w3.org/2000/svg"
           ><path
@@ -48,29 +44,37 @@ import logoblanco from "../assets/img/mor.svg"
 <script>
   // variables
   const open = document.getElementById('open')
+  const menu = document.getElementById("mobile-menu")
   open?.addEventListener('click', function () {
-    document.getElementById("mobile-menu").style.width = "100%";
+    if (menu) {
+      menu.style.width = "100%";
+    }
   })
   const close = document.getElementById('close')
   close?.addEventListener('click', function () {
-    document.getElementById("mobile-menu").style.width = "0%";
+    if (menu) {
+      menu.style.width = "0%";
+    }
   })
   const botones = document.querySelector('#overlay-content')
-  botones?.addEventListener('click', function(e) {
+  botones?.addEventListener('click', function(e: any) {
     if(e.target.matches('a.boton')) {
-      document.getElementById("mobile-menu").style.width = "0%";
+      if (menu) {
+        menu.style.width = "0%";
+      }
     }
   })
   const mainNav = document.querySelector('#main-navigation')
-  const mainMenu = mainNav.querySelector('ul')
+  const mainMenu = mainNav?.querySelectorAll('ul')
   const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')]
 
   // functions
   const setActiveMenuItem = () => {
-    const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
+    // const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
     const currenPathname = window.location.pathname
 
-    mobileDesktopMenus.forEach((menu) => {
+    if (mainMenu) {
+      mainMenu.forEach((menu) => {
       const menuItems = [...menu.querySelectorAll('a:not([rel*="external"])')] as HTMLAnchorElement[]
 
       menuItems.forEach((menuItem) => {
@@ -83,20 +87,24 @@ import logoblanco from "../assets/img/mor.svg"
         }
       })
     })
+    }
   }
 
   const checkMenuSize = () => {
-    const mainNavWidth = mainNav.getBoundingClientRect().width
-    const desktopMenuWidth = document.querySelector('.desktop-menu').getBoundingClientRect().width
+    const $deskMenu = document.querySelector('.desktop-menu')
+    const mainNavWidth = mainNav?.getBoundingClientRect().width
+    const desktopMenuWidth = $deskMenu?.getBoundingClientRect().width
     const logoWidthBuffer = 300
-    const totalMenuWidth = Math.round(desktopMenuWidth) + logoWidthBuffer
-
-    if (totalMenuWidth >= mainNavWidth) {
-      mainNav.classList.remove('is-desktop')
-      mainNav.classList.add('is-mobile')
-    } else if (totalMenuWidth <= mainNavWidth) {
-      mainNav.classList.add('is-desktop')
-      mainNav.classList.remove('is-mobile')
+    if (desktopMenuWidth && mainNavWidth) {
+      const totalMenuWidth = Math.round(desktopMenuWidth) + logoWidthBuffer
+    
+      if (totalMenuWidth >= mainNavWidth) {
+        mainNav.classList.remove('is-desktop')
+        mainNav.classList.add('is-mobile')
+      } else if (totalMenuWidth <= mainNavWidth) {
+        mainNav.classList.add('is-desktop')
+        mainNav.classList.remove('is-mobile')
+      }
     }
   }
 
